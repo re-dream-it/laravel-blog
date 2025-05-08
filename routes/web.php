@@ -18,9 +18,6 @@ use App\Http\Controllers\Post\StoreController as PostStoreController;
 use App\Http\Controllers\Post\ShowController as PostShowController;
 use App\Http\Controllers\Post\UpdateController as PostUpdateController;
 use App\Http\Controllers\Post\DeleteController as PostDeleteController;
-use App\Http\Controllers\Post\Like\StoreController as PostLikeStoreController;
-use App\Http\Controllers\Post\Like\DeleteController as PostLikeDeleteController;
-
 
 // Home
 Auth::routes();

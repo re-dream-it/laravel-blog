@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Http\Controllers\Post\Like\DeleteController;
-use App\Http\Controllers\Post\Like\StoreController;
+use App\Actions\LikePostAction;
+use App\Actions\UnlikePostAction;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -23,16 +23,17 @@ class LikeButton extends Component
 
     public function toggleLike()
     {
-        if (!Auth::check()) { return redirect()->route('login');}
-        $controller = $this->isLiked ? DeleteController::class : StoreController::class;
+        if (!Auth::check()) { return $this->js("alert('Требуется авторизация!')");}
+        $action = $this->isLiked ? UnlikePostAction::class : LikePostAction::class;
 
-        app($controller)($this->post, Auth::id());
+        app($action)->execute($this->post, Auth::user());
         $this->updateLikeStatus();
     }
 
     protected function updateLikeStatus()
     {
-        $this->likesCount = $this->post->likes()->count();
+        $this->post->loadCount('likes');
+        $this->likesCount = $this->post->likes_count;
         $this->isLiked = $this->post->isLikedBy(Auth::id());
     }
 
