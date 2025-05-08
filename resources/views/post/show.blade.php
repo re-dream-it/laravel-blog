@@ -45,33 +45,8 @@
         <div class="lead">{!! nl2br(e($post->content)) !!}</div>
     </section>
 
-
-    <div class="d-flex align-items-center gap-2 mb-4 ms-4">
-        <form 
-            action="{{ $post->isLikedBy(auth()->id()) ? route('post.like.delete', $post) : route('post.like.store', $post) }}" 
-            method="post"
-        >
-            @csrf
-            @if($post->isLikedBy(auth()->id()))
-                @method('DELETE')
-            @endif
-            
-            <button type="submit" class="btn btn-link p-0 border-0">
-                @if($post->isLikedBy(auth()->id()))
-                    <i class="bi bi-heart-fill text-danger fs-6"></i>
-                @else
-                    <i class="bi bi-heart fs-6"></i>
-                @endif
-            </button>
-        </form>
-        
-        <span class="text-muted">
-            <h5 class="mb-0">{{ $post->likes_count ?? $post->likes()->count() }}</h5>
-        </span>
-    </div>
+    @livewire('likeButton', ['post' => $post], key($post->id))
   
-
-
     <footer class="d-flex gap-2 border-top pt-3">
         <a href="{{ url()->previous() }}" class="btn btn-outline-secondary ms-auto">
             <i class="bi bi-arrow-left"></i> Назад

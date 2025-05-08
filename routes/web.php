@@ -36,12 +36,6 @@ Route::group(['prefix' => 'posts', 'as' => 'post.'], function (){
     Route::get('/{post}', PostShowController::class)->name('show'); // Страница поста
     Route::patch('/{post}/update', PostUpdateController::class)->name('update')->middleware('admin'); // Обработка формы редактирования поста
     Route::delete('/{post}/delete', PostDeleteController::class)->name('delete')->middleware('admin'); // Обработка формы создания поста
-
-    // Posts/Like
-    Route::group(['prefix' => '/{post}/like', 'as' => 'like.', 'middleware' => 'auth'], function (){
-        Route::post('/', PostLikeStoreController::class)->name('store'); // Обработка лайка
-        Route::delete('/', PostLikeDeleteController::class)->name('delete'); // Страница редактирования поста
-    });
 });
 
 // Admin
