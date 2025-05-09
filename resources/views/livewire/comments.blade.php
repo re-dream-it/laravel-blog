@@ -21,31 +21,31 @@
         @endforeach
     @endif
 
-    @if ($post->comments)
-        @foreach ($post->comments as $comment)
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-2">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-person-circle me-2 fs-4"></i>
-                            <strong>{{ $comment->user->name }}</strong>
-                        </div>
-                        <div class="ms-auto">
-                            <small class="text-muted">{{ $comment->created_at }}</small>
-                            @can('delete', $comment)
-                                <button wire:confirm="Вы точно хотите удалить комментарий?" wire:click="deleteComment({{ $comment->id }})" class="btn ms-1 p-0"><i class="bi bi-trash-fill"></i></button>
-                            @endcan
-                        </div>
 
+    @forelse ($post->comments as $comment)
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle me-2 fs-4"></i>
+                        <strong>{{ $comment->user->name }}</strong>
                     </div>
-                    <p class="mb-0"><i class="bi bi-chat-left-quote text-muted me-1"></i> {{ $comment->content }}</p>
-                    
+                    <div class="ms-auto">
+                        <small class="text-muted">{{ $comment->created_at }}</small>
+                        @can('delete', $comment)
+                            <button wire:confirm="Вы точно хотите удалить комментарий?" wire:click="deleteComment({{ $comment->id }})" class="btn ms-1 p-0"><i class="bi bi-trash-fill"></i></button>
+                        @endcan
+                    </div>
+
                 </div>
+                <p class="mb-0"><i class="bi bi-chat-left-quote text-muted me-1"></i> {{ $comment->content }}</p>
+                
             </div>
-        @endforeach
-    @else
-        Нет коммов
-    @endif
+        </div>
+    @empty
+        <div class="alert alert-secondary text-center">Нет комментариев</div>
+    @endforelse
+
 
 
 </section>

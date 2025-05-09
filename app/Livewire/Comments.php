@@ -27,6 +27,7 @@ class Comments extends Component
         if (!Auth::check()) { return $this->js("alert('Требуется авторизация!')"); }
         $content = $this->validate((new StoreRequest)->rules(), (new StoreRequest)->messages())['content'];
         app(StoreComment::class)->execute($this->post, Auth::user(), $content);
+        $this->reset('content');
     }
 
     public function deleteComment(Comment $comment)
