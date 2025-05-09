@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ShowController extends BaseController
 {
     public function __invoke(Post $post){
+        $post->with(['comments'])->with(['users']);
         return view('post.show', compact('post'));
     }
 }

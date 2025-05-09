@@ -2,7 +2,6 @@
 @section('content')
 <div class="container mt-3">
 
-
 <article class="container py-1">
     <nav aria-label="breadcrumb" class="mb-2">
         <ol class="breadcrumb">
@@ -32,8 +31,8 @@
     </div>
 
     <figure class="text-center mb-4">
-        <img src="{{ asset('storage/' . $post->image) }}" 
-             alt="{{ $post->title }}" 
+        <img src="{{ asset('storage/' . $post->image) }}"
+             alt="{{ $post->title }}"
              class="img-fluid rounded-3 shadow"
              style="max-height: 500px; width: auto;">
         @if($post->description)
@@ -46,7 +45,10 @@
     </section>
 
     @livewire('likeButton', ['post' => $post], key($post->id))
-  
+
+
+    @livewire('comments', ['post' => $post], key($post->id))
+
     <footer class="d-flex gap-2 border-top pt-3">
         <a href="{{ url()->previous() }}" class="btn btn-outline-secondary ms-auto">
             <i class="bi bi-arrow-left"></i> Назад
