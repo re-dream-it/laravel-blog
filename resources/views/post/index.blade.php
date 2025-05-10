@@ -54,11 +54,19 @@
                         <p class="card-text">{{ $post->description }}</p>
 
                         <div class="row mt-auto ps-2 pe-2">
-                            <div class="d-flex ps-2">
-                                <i class="bi bi-heart-fill text-secondary"></i>
-                                <span class="text-muted mt-auto mb-auto">
-                                    <h6 class="m-auto ps-1">{{ $post->likes()->count() }}</h5>
-                                </span>
+                            <div class="d-flex p-1">
+                                <div class="d-flex">
+                                    <i class="bi bi-heart-fill text-secondary"></i>
+                                    <span class="text-muted mt-auto mb-auto">
+                                        <h6 class="m-auto ps-1">{{ $post->likes }}</h5>
+                                    </span>
+                                </div>
+                                <div class="d-flex ps-3">
+                                    <i class="bi bi-chat-dots-fill text-secondary"></i>
+                                    <span class="text-muted mt-auto mb-auto">
+                                        <h6 class="m-auto ps-1">{{ $post->comments_count }}</h5>
+                                    </span>
+                                </div>
                             </div>
                             <a href="{{ route('post.show', $post->id) }}" class="btn btn-primary mt-2">Читать</a>
                         </div>
