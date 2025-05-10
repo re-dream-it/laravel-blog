@@ -10,11 +10,6 @@
         <form action="{{ route('post.index') }}" method="get">
             <div class="d-flex flex-row mb-3">
                 <div class="me-3">
-                    <label for="postTitle" class="form-label">Название</label>
-                    <input type="text" class="form-control" id="postTitle" name="title" value="{{ $requestData['title'] ?? '' }}">
-                </div>
-
-                <div class="me-3">
                     <label for="postCategory" class="form-label">Категория</label>
                     <select class="form-select" id="postCategory" name="category_id">
                         <option value="">Все категории</option>
@@ -25,6 +20,11 @@
                             </option>
                         @endforeach
                     </select>
+                </div>
+
+                <div class="me-3">
+                    <label for="postTitle" class="form-label">Название</label>
+                    <input type="text" class="form-control" id="postTitle" name="title" value="{{ $requestData['title'] ?? '' }}">
                 </div>
 
                 <button type="submit" class="btn btn-outline-primary h-50 mt-auto">Применить</button>

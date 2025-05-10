@@ -36,7 +36,7 @@
              class="img-fluid rounded-3 shadow"
              style="max-height: 500px; width: auto;">
         @if($post->description)
-        <figcaption class="text-muted mt-2">{{ $post->description }}</figcaption>
+            <figcaption class="text-muted mt-2">{{ $post->description }}</figcaption>
         @endif
     </figure>
 
