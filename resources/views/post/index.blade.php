@@ -53,7 +53,16 @@
 
                         <p class="card-text">{{ $post->description }}</p>
 
-                        <a href="{{ route('post.show', $post->id) }}" class="btn btn-primary mt-auto">Читать</a>
+                        <div class="row mt-auto ps-2 pe-2">
+                            <div class="d-flex ps-2">
+                                <i class="bi bi-heart-fill text-secondary"></i>
+                                <span class="text-muted mt-auto mb-auto">
+                                    <h6 class="m-auto ps-1">{{ $post->likes()->count() }}</h5>
+                                </span>
+                            </div>
+                            <a href="{{ route('post.show', $post->id) }}" class="btn btn-primary mt-2">Читать</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
