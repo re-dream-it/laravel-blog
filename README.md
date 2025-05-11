@@ -8,10 +8,9 @@ A responsive blog platform with real-time interactions, built with Laravel, Boot
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
 ## ✨ Features
-- **Real-time interactions** (likes/comments) via Livewire
 - **User authentication** (register/login/logout)
 - **Post management** (CRUD operations with admin panel)
-- **Engagement features** (likes, comments, filters)
+- **Engagement features** (likes, comments, filters) via Livewire
 - **Responsive design** with Bootstrap 5
 - **Markdown support** with comfortable Toast UI editor
 
