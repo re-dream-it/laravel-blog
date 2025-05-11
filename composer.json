@@ -11,7 +11,9 @@
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
         "league/commonmark": "^2.7.0",
-        "livewire/livewire": "^3.6"
+        "livewire/livewire": "^3.6",
+        "spatie/laravel-markdown": "^2.7",
+        "webuni/commonmark-table-extension": "^0.1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

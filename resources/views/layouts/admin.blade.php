@@ -2,6 +2,7 @@
 <html lang="en">
   <!--begin::Head-->
   <head>
+    @vite(['resources/js/app.js'])
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Админ-панель</title>
     <!--begin::Primary Meta Tags-->

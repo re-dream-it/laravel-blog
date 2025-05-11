@@ -66,7 +66,10 @@
 
     <div class="mb-3">
         <label for="postContent" class="form-label">Текст</label>
-        <textarea class="form-control" id="postContent" rows="3" name="content">{{ $post->content }}</textarea>
+        <div class="" id="editor" name="content">
+            <x-markdown>{!! $post->content !!}</x-markdown>
+        </div>
+        <textarea name="content" id="hiddenContent" style="display: none;"></textarea>
     </div>
 
     <div class="mb-3">
