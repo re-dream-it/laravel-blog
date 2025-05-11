@@ -41,7 +41,11 @@
     </figure>
 
     <section class="mb-5">
-        <div class="lead">{!! nl2br(e($post->content)) !!}</div>
+        <div class="lead">
+            <x-markdown theme="github-dark" :highlight-code="true">
+                {{ $post->content }}
+            </x-markdown>
+        </div>
     </section>
 
     @livewire('likeButton', ['post' => $post], key($post->id))

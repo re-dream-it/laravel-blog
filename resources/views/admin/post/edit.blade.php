@@ -66,7 +66,7 @@
 
     <div class="mb-3">
         <label for="postContent" class="form-label">Текст</label>
-        <textarea class="form-control" id="postContent" rows="3" name="content">{{ $post->content }}</textarea>
+        <textarea class="form-control" id="postContent" rows="20" name="content">{{ $post->content }}</textarea>
     </div>
 
     <div class="mb-3">
