@@ -60,10 +60,12 @@
         <input type="text" class="form-control" id="postDescription" name="description" required>
     </div>
 
-    <div class="mb-3">
+   <div class="mb-3">
         <label for="postContent" class="form-label">Текст</label>
-        <textarea class="form-control" id="postContent" rows="3" name="content" required></textarea>
+        <div class="" id="editor" name="content"></div>
+        <textarea name="content" id="hiddenContent" style="display: none;"></textarea>
     </div>
+
 
     <div class="mb-3">
         <label for="postImage" class="form-label">Изображение</label>

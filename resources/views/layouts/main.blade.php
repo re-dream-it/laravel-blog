@@ -2,6 +2,7 @@
 <html lang="en">
     {{-- Head --}}
     <head>
+        @vite(['resources/js/app.js'])
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>redream</title>

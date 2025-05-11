@@ -42,9 +42,7 @@
 
     <section class="mb-5">
         <div class="lead">
-            <x-markdown theme="github-dark" :highlight-code="true">
-                {{ $post->content }}
-            </x-markdown>
+            <x-markdown>{!! $post->content !!}</x-markdown>
         </div>
     </section>
 

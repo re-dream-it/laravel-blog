@@ -17,6 +17,8 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
+        "@toast-ui/editor": "^3.1.0",
+        "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
         "bootstrap-icons": "^1.12.1",
         "shiki": "^3.4.0"
     }
