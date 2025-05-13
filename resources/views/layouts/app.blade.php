@@ -57,12 +57,10 @@
                                             <i class="bi bi-person-circle"></i>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#">Профиль</a></li>
-                                            <li><a class="dropdown-item" href="#">Настройки</a></li>
                                             @can('view', auth()->user())
                                                 <li><a class="dropdown-item" href="{{ route('admin.index') }}">Админ-панель</a></li>
+                                                <li><hr class="dropdown-divider"></li>
                                             @endcan
-                                            <li><hr class="dropdown-divider"></li>
                                             <li>
                                                 <form action="{{ route('logout') }}" method="post">
                                                     @csrf
