@@ -33,7 +33,7 @@ php artisan migrate --seed
 
 # Run locally
 php artisan serve
-npn run build
+npm run build
 npm run dev
 ```
 
