@@ -3,7 +3,7 @@ services:
     build:
       args:
         user: laravel_blog
-        uid: 1000
+        uid: ${UID}
       context: ./
       dockerfile: Dockerfile
     image: blog
