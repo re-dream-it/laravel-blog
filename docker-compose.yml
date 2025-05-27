@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      args:
+        user: laravel_blog
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: blog
+    container_name: laravel-blog
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./src:/var/www
+    networks:
+      - blog
+
+  db:
+    image: mysql:8.0
+    container_name: laravelblog-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - blog
+
+  nginx:
+    image: nginx:alpine
+    container_name: laravel-blog-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      - blog
+
+networks:
+  blog:
+    driver: bridge
