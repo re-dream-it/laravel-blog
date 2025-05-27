@@ -19,11 +19,12 @@ A responsive blog platform with real-time interactions, built with Laravel, Boot
 git clone https://github.com/yourname/laravel-blog.git
 cd laravel-blog
 ```
-2. Create your `.env` file in root folder with DB settings:
+2. Create your `.env` file in root folder with settings:
 ```config
 DB_DATABASE=db_name
 DB_PASSWORD=pass
 DB_USERNAME=user
+UID=user_id
 ```
 3. Copy `src/.env.example` to `src/.env` and provide Laravel settings.
 4. Configure `nginx/blog.conf`
