@@ -1,4 +1,4 @@
-CREATE DATABASE laravel;
+CREATE DATABASE laravel_blog;
 
 CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'laravelblog_password';
 
