@@ -19,17 +19,16 @@ A responsive blog platform with real-time interactions, built with Laravel, Boot
 git clone https://github.com/yourname/laravel-blog.git
 cd laravel-blog
 ```
-2. Configure `docker/mysql/init_db.sql`
-3. Create your `.env` file in root folder with settings:
+2. Create your `.env` file in root folder with settings:
 ```config
 DB_DATABASE=db_name
 DB_PASSWORD=pass
 DB_USERNAME=user
 UID=user_id
 ```
-4. Copy `src/.env.example` to `src/.env` and provide Laravel settings.
-5. Configure `docker/nginx/blog.conf`
-6. Setup Docker Compose:
+3. Copy `src/.env.example` to `src/.env` and provide Laravel settings.
+4. Configure `docker/nginx/blog.conf`
+5. Setup Docker Compose:
 ```bash
 # Docker Setup
 docker compose build --no-cache
