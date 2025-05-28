@@ -1,5 +1,5 @@
-CREATE DATABASE laravel_blog;
+CREATE DATABASE IF NOT EXISTS `${DB_DATABASE}`;
 
-CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'laravelblog_password';
+CREATE USER IF NOT EXISTS '${DB_USERNAME}'@'localhost' IDENTIFIED BY '${DB_PASSWORD}';
 
-GRANT ALL PRIVILEGES ON `laravel_blog`.* TO 'laravel'@'localhost';
+GRANT ALL PRIVILEGES ON `${DB_DATABASE}`.* TO '${DB_USERNAME}'@'localhost';
