@@ -12,6 +12,7 @@
         "laravel/ui": "^4.6",
         "league/commonmark": "^2.7.0",
         "livewire/livewire": "^3.6",
+        "predis/predis": "^3.0",
         "spatie/laravel-markdown": "^2.7",
         "webuni/commonmark-table-extension": "^0.1.0"
     },
