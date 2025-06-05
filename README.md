@@ -25,6 +25,10 @@ DB_DATABASE=db_name
 DB_PASSWORD=pass
 DB_USERNAME=user
 UID=user_id
+
+REDIS_PASSWORD=pass
+REDIS_USER=user
+REDIS_USER_PASSWORD=pass
 ```
 3. Copy `src/.env.example` to `src/.env` and provide Laravel settings.
 4. Configure `docker/nginx/blog.conf`
